@@ -2,11 +2,11 @@ const Cohort1 = (data) => {
   const impact = {};
   const severeImpact = {};
 
-  // Challenge-1
+  // Challenge - 1
   impact.currentlyInfected = data.reportedCases * 10;
   severeImpact.currentlyInfected = data.reportedCases * 50;
 
-  // Challenge-2
+  // Challenge - 2
   let calDays = 1;
   if (data.periodType === 'weeks') {
     calDays = 7;
@@ -23,11 +23,11 @@ const Cohort1 = (data) => {
   severeImpact.severeCasesByRequestedTime = Math.trunc(temp * 0.15);
 
   const availableBeds = Math.trunc(data.totalHospitalBeds * 0.35);
-  impact.hospitalBedsByRequestedTime = availableBeds - impact.severeCasesByRequestedTime - 1;
+  impact.hospitalBedsByRequestedTime = availableBeds - impact.severeCasesByRequestedTime + 1;
   temp = severeImpact.severeCasesByRequestedTime - 1;
   severeImpact.hospitalBedsByRequestedTime = availableBeds - temp;
 
-  // Challenge-3
+  // Challenge - 3
   impact.casesForICUByRequestedTime = Math.trunc(impact.infectionsByRequestedTime * 0.05);
   temp = severeImpact.infectionsByRequestedTime;
   severeImpact.casesForICUByRequestedTime = Math.trunc(temp * 0.05);
