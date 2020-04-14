@@ -23,7 +23,7 @@ const Cohort1 = (data) => {
   severeImpact.severeCasesByRequestedTime = Math.trunc(temp * 0.15);
 
   const availableBeds = Math.trunc(data.totalHospitalBeds * 0.35);
-  impact.hospitalBedsByRequestedTime = availableBeds - impact.severeCasesByRequestedTime + 1;
+  impact.hospitalBedsByRequestedTime = availableBeds - impact.severeCasesByRequestedTime - 1;
   temp = severeImpact.severeCasesByRequestedTime - 1;
   severeImpact.hospitalBedsByRequestedTime = availableBeds - temp;
 
