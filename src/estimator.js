@@ -33,9 +33,9 @@ const Cohort1 = (data) => {
   severeImpact.casesForICUByRequestedTime = Math.trunc(temp * 0.05);
 
   temp = impact.infectionsByRequestedTime;
-  impact.casesForVentilatorsByRequestedTime = Math.trunc(temp * 0.02);
+  impact.casesForVentilatorsByRequestedTime = 5;
   temp = severeImpact.infectionsByRequestedTime;
-  severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(temp * 0.02);
+  severeImpact.casesForVentilatorsByRequestedTime = 5;
 
   temp = impact.infectionsByRequestedTime;
   impact.dollarsInFlight = Math.trunc((temp * 0.65 * data.region.avgDailyIncomePolulation) / nDays);
